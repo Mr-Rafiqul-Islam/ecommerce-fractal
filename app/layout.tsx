@@ -3,6 +3,7 @@ import React from "react";
 
 import "./globals.css";
 import { kanit } from "./fonts/fonts";
+import Providers from "@/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${kanit.className} `}>{children}</body>
+        <body className={`${kanit.className} `}>
+          <Providers>{children}</Providers>
+        </body>
       </html>
     </>
   );
