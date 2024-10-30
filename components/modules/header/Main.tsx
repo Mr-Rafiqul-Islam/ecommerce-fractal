@@ -8,9 +8,9 @@ import Container from "@/components/custom/Container";
 
 export default function Main() {
   return (
-    <section>
+    <section className="h-full">
       <Container>
-        <Row>
+        <Row className="justify-between">
           <MobileButton />
           <Logo />
           <MainMenu />

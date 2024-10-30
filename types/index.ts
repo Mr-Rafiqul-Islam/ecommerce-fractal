@@ -15,4 +15,19 @@ export type SubCategory={
     link:string;
     parent:string;   
 }
-export type Page={}
+export type Page={
+    _id:string;
+    name:string;
+    slug:string;
+    link:string;
+    createdAt?:string;
+    subPage?:SubPage[];
+}
+export type SubPage={
+    _id:string;
+    name:string;
+    slug:string;
+    link:string;
+    createdAt?:string;
+    parent?:string;   
+}

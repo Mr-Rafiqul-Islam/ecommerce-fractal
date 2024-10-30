@@ -1,8 +1,10 @@
-import React from 'react'
-import Main from './Main'
+import React from "react";
+import Main from "./Main";
 
 export default function Header() {
   return (
-    <header><Main/></header>
-  )
+    <header className="h-[80px]">
+      <Main />
+    </header>
+  );
 }
