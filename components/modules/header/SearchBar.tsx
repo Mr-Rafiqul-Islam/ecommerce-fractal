@@ -16,6 +16,7 @@ import useSWR, { Fetcher } from "swr";
 import { Product } from "@/types";
 import Image from "next/image";
 import { getBestPriceWithDiscountFromProduct } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export default function SearchBar({
   openSearchBar,
@@ -25,6 +26,7 @@ export default function SearchBar({
   setOpenSearchBar: (v: boolean) => void;
 }) {
 
+  const router = useRouter();
     // client side data fethcing
   const fetcher: Fetcher<Product[], string> = (...args) =>
     fetch(...args)
@@ -49,7 +51,7 @@ export default function SearchBar({
           <Input
             placeholder="type any product here"
             onInput={handleSearch}
-            className=" text-slate-500"
+            className=" text-slate-500 font-medium text-xl"
           />
           <Button
             onClick={() => setOpenSearchBar(false)}
@@ -60,15 +62,21 @@ export default function SearchBar({
             <X className="group-hover:text-white" />
           </Button>
         </div>
-        <div className="flex overflow-y-auto w-full py-12 gap-12 flex-col justify-start">
+        <div className="flex overflow-y-auto w-full py-12 gap-12 flex-col justify-start h-[600px] px-8">
           {
             data && data.map((item: Product) => (
               <div
                 key={item._id}
-                className="w-full flex flex-col justify-start gap-8 px-8 items-center"
+                className="w-full group flex flex-col justify-start gap-8 px-8 cursor-pointer items-center lg:h-fit lg:flex-row lg:justify-between hover:border-gray-50 hover:scale-105 transition-all hover:shadow-lg py-4" role="button"
+                onClick={() =>
+                  router.push(`/products/${item.slug}`)
+                }
               >
                 <Image src={item.subProducts[0].options[0].images[0]} alt={item.name} width={60} height={80} className="object-contain"/>
-                <h6>{getBestPriceWithDiscountFromProduct(item)}</h6>
+                <span className="text-center">{item.name.substring(0, 100)}</span>
+                <div className="w-40 text-center  font-bold text-xl text-primary-900">
+                {getBestPriceWithDiscountFromProduct(item)}$
+                </div>
               </div>
             ))
           }
