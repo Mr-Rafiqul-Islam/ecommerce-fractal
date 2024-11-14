@@ -11,7 +11,7 @@ export default function IconGroups({openSearchBar, setOpenSearchBar}:{openSearch
       <Row className=''>
         <SearchBar openSearchBar={openSearchBar} setOpenSearchBar={setOpenSearchBar}/>
         <Button variant='nostyle' size={'icon'} onClick={()=>setOpenSearchBar(!openSearchBar)}>
-        <CiSearch size={32} className='hover:text-primary-700'/>
+        <CiSearch size={40} className='hover:text-primary-700'/>
         </Button>
       </Row>
     </div>

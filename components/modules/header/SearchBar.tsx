@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Dialog,
@@ -17,6 +17,7 @@ import { Product } from "@/types";
 import Image from "next/image";
 import { getBestPriceWithDiscountFromProduct } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/custom/Loading";
 
 export default function SearchBar({
   openSearchBar,
@@ -26,6 +27,7 @@ export default function SearchBar({
   setOpenSearchBar: (v: boolean) => void;
 }) {
 
+  const [search, setSearch] = useState("");
   const router = useRouter();
     // client side data fethcing
   const fetcher: Fetcher<Product[], string> = (...args) =>
@@ -33,17 +35,20 @@ export default function SearchBar({
       .then((res) => res.json())
       .then((data) => data.data);
 
-  const { data, error, isLoading } = useSWR<Product[]>(
-    process.env.NEXT_PUBLIC_API_URL + "/api/products",
+  const { data, error, isLoading, isValidating } = useSWR<Product[]>(
+    process.env.NEXT_PUBLIC_API_URL + "/api/products?search=" + search,
     fetcher
   );
   if (error)
     return <div>Failed to load due to Categories data Fetching error!</div>;
   console.log(data);
-  const handleSearch = () => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     // todo call api
+    setSearch(e.currentTarget.value);
   };
   return (
+    <>
+    {(isValidating||isLoading) && <Loading isLoading={isValidating} />}
     <Dialog open={openSearchBar}>
       <DialogContent className="lg:max-w-screen-xl z-[9999] [&>.closeBtn]:hidden ">
         <div className="flex items-center w-full gap-4">
@@ -83,5 +88,6 @@ export default function SearchBar({
         </div>
       </DialogContent>
     </Dialog>
+    </>
   );
 }
