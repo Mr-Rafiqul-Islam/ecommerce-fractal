@@ -76,3 +76,9 @@ export type SubProduct = {
   options: Options[];
   _id: string;
 };
+export type CartItem = {
+  sku: string;
+  style: Style;
+  options: Options[];
+  _id: string;
+};
