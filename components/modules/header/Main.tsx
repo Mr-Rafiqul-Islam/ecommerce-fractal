@@ -9,6 +9,7 @@ import Container from "@/components/custom/Container";
 
 export default function Main() {
   const [openSearchBar, setOpenSearchBar] = useState(false);
+  const [openCartBar, setOpenCartBar] = useState(false);
   return (
     <section className="h-full">
       <Container>
@@ -16,7 +17,10 @@ export default function Main() {
           <MobileButton />
           <Logo />
           <MainMenu />
-          <IconGroups openSearchBar={openSearchBar} setOpenSearchBar={setOpenSearchBar}/>
+          <IconGroups 
+          openSearchBar={openSearchBar} setOpenSearchBar={setOpenSearchBar}
+          openCartBar={openCartBar} setOpenCartBar={setOpenCartBar}
+          />
         </Row>
       </Container>
     </section>

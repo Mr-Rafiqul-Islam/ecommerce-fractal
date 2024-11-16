@@ -1,6 +1,7 @@
 "use client";
 import { ClerkProvider } from "@clerk/nextjs";
 import React from "react";
+import FramerMotionProvider from "./FramerMotionProvider";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -23,7 +24,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         signInFallbackRedirectUrl="/"
         signUpFallbackRedirectUrl="/"
       >
+        <FramerMotionProvider>
         {children}
+        </FramerMotionProvider>
       </ClerkProvider>
     </div>
   );
