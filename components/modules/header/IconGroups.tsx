@@ -5,6 +5,7 @@ import React from "react";
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import SearchBar from "./SearchBar";
 import CartBar from "./CartBar";
+import { useRouter } from "next/navigation";
 
 export default function IconGroups({
   openSearchBar,
@@ -17,6 +18,7 @@ export default function IconGroups({
   openCartBar: boolean;
   setOpenCartBar: (v: boolean) => void;
 }) {
+  const router = useRouter();
   return (
     <div>
       <Row className="lg:gap-4">
@@ -45,7 +47,7 @@ export default function IconGroups({
         <Button
           variant="nostyle"
           size={"icon"}
-          onClick={() => setOpenSearchBar(!openSearchBar)}
+          onClick={() => router.push("/account/dashboard")}
         >
           <CiUser size={40} className="hover:text-primary-700" />
         </Button>
