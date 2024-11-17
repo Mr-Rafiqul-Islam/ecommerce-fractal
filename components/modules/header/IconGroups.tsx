@@ -28,15 +28,15 @@ export default function IconGroups({
         />
         <Button
           variant="nostyle"
-          size={"icon"}
+          size="icon"
           onClick={() => setOpenSearchBar(!openSearchBar)}
         >
-          <CiSearch size={40} className="hover:text-primary-700" />
+          <CiSearch size='40' className="hover:text-primary-700" />
         </Button>
 
         <Button
           variant="nostyle"
-          size={"icon"}
+          size="icon"
           onClick={() => setOpenCartBar(!openCartBar)}
           className="relative hidden lg:block"
         >
@@ -45,11 +45,12 @@ export default function IconGroups({
         </Button>
 
         <Button
+        className="hidden lg:block"
           variant="nostyle"
-          size={"icon"}
+          size="icon"
           onClick={() => router.push("/account/dashboard")}
         >
-          <CiUser size={40} className="hover:text-primary-700" />
+          <CiUser size="40" className=" hover:text-primary-700" />
         </Button>
         <CartBar openCartBar={openCartBar} setOpenCartBar={setOpenCartBar} />
       </Row>

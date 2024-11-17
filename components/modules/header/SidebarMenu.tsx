@@ -23,7 +23,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function SidebarMenu() {
-
   const router = useRouter();
   const [show, setShow] = useState(false);
   const [subCategories, setSubCategories] = useState<SubCategory[]>();
@@ -99,14 +98,18 @@ export default function SidebarMenu() {
                       className="group inline-flex px-4 py-2 gap-4 w-full hover:text-primary-700 capitalize cursor-pointer"
                     >
                       <div className="flex items-center gap-4 w-full">
-                        <span onClick={() => {
-                              router.push(`/categories/${item.link}/products`);
-                            }} className="">{item.name}</span>
+                        <span
+                          onClick={() => {
+                            router.push(`${item.link}`);
+                          }}
+                          className=""
+                        >
+                          {item.name}
+                        </span>
                         {item?.subPage && item?.subPage.length > 0 && (
                           <ChevronRight
                             size={14}
                             className="ms-auto h-5 w-5 text-iconsInside"
-                            
                           />
                         )}
                       </div>

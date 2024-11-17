@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, m, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Trash } from "lucide-react";
 import { CartItem } from "@/types";
@@ -33,7 +33,7 @@ export default function CartBar({
             transition: { duration: 0.22, ease: "easeIn" },
             scale:0
           }}
-          className="absolute top-[54px] right-10 h-fit w-[360px] bg-white p-4 shadow-2xl"
+          className="absolute top-[54px] right-0 h-fit w-[360px] bg-white p-4 shadow-2xl"
         >
           <div className="flex flex-col justify-between gap-8">
             <span className="text-center">
