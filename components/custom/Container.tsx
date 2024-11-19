@@ -5,7 +5,7 @@ export default function Container({
   children,
   className,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }) {
   return <div className={cn("container w-full h-full", className)}>{children}</div>;
