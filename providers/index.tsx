@@ -2,6 +2,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import React from "react";
 import FramerMotionProvider from "./FramerMotionProvider";
+import ToastProvider from "./ToastProvider";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -24,6 +25,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         signInFallbackRedirectUrl="/"
         signUpFallbackRedirectUrl="/"
       >
+        <ToastProvider/>
         <FramerMotionProvider>
         {children}
         </FramerMotionProvider>
