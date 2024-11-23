@@ -82,3 +82,16 @@ export type CartItem = {
   options: Options[];
   _id: string;
 };
+export type Slide ={
+    _id:string;
+    name:string;
+    link:string;
+    slug:string;
+    title:string;
+    description:string;
+    subtitle:string;
+    btn:string;
+    image:string;
+    textColor:string;
+    createdAt?:string;
+}

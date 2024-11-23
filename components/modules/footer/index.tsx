@@ -59,7 +59,11 @@ export default function Footer() {
   return (
     <>
       {loading && <Loading isLoading={loading} />}
-      <footer className="bg-dark pb-10">
+      <m.footer
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="bg-dark pb-10">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-4 text-slate-400">
             <ul className="flex flex-col gap-4">
@@ -172,7 +176,7 @@ export default function Footer() {
             </ul>
           </div>
         </Container>
-      </footer>
+      </m.footer>
     </>
   );
 }
