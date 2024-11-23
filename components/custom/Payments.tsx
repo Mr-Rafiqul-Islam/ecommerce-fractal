@@ -13,11 +13,11 @@ import { Slide } from '@/types';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import './style.css'
-import { Headset } from 'lucide-react';
+import { Calendar, CreditCard, Headset, LockKeyhole, Truck } from 'lucide-react';
 
 export default function Payments() {
   return (
-    <section className='py-10'>
+    <section className='py-10 w-full'>
         <Container>
             <Swiper
             breakpoints={{
@@ -50,46 +50,46 @@ export default function Payments() {
                 className='shadow-xl w-full flex items-center justify-center border border-gray-200 rounded-md px-20 py-10'
             >
                 <SwiperSlide className='relative py-10'>
-                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-0 after:bg-neutral-200'>
+                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Headset className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col gap-4">
-                            <h6 className='uppercase'>24/7</h6>
+                            <h6 className='uppercase text-base'>24/7</h6>
                             <span className='text-sm'> Support every time</span>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='relative py-10'>
-                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-0 after:bg-neutral-200'>
-                        <Headset className='h-6 w-6 text-primary-900' />
+                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
+                        <CreditCard className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col gap-4">
-                            <h6 className='uppercase'>accept payment</h6>
+                            <h6 className='uppercase text-base'>accept payment</h6>
                             <span className='text-sm'> visa, paypal, mastercard</span>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='relative py-10'>
-                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-0 after:bg-neutral-200'>
-                        <Headset className='h-6 w-6 text-primary-900' />
+                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
+                        <LockKeyhole className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col gap-4">
-                            <h6 className='uppercase'>secured payment</h6>
+                            <h6 className='uppercase text-base'>secured payment</h6>
                             <span className='text-sm'> 100% secured</span>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='relative py-10'>
-                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-0 after:bg-neutral-200'>
-                        <Headset className='h-6 w-6 text-primary-900' />
+                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
+                        <Truck className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col gap-4">
-                            <h6 className='uppercase'>free shipping</h6>
+                            <h6 className='uppercase text-base'>free shipping</h6>
                             <span className='text-sm'> order over $300</span>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide className='relative py-10'>
-                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-0 after:bg-neutral-200'>
-                        <Headset className='h-6 w-6 text-primary-900' />
+                    <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
+                        <Calendar className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col gap-4">
-                            <h6 className='uppercase'>30 days return</h6>
+                            <h6 className='uppercase text-base'>30 days return</h6>
                             <span className='text-sm'> 30 days guarantee</span>
                         </div>
                     </div>
