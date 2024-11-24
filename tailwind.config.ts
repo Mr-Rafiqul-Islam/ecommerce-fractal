@@ -160,8 +160,8 @@ const config: Config = {
       },
       // screen breakpoints for min width
       screens: {
-        xs: "360px",
-        // => @media (min-width: 360px) { ... }
+        xs: "320px",
+        // => @media (min-width: 320px) { ... }
 
         sm: "640px",
         // => @media (min-width: 640px) { ... }
@@ -189,8 +189,8 @@ const config: Config = {
         center: true,
         // screens  max width
         screens: {
-          xs: "360px",
-          // => @media (max-width: 360px) { ... }
+          xs: "320px",
+          // => @media (max-width: 320px) { ... }
 
           sm: "575px",
           // => @media (max-width: 640px) { ... }

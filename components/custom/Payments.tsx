@@ -21,7 +21,7 @@ export default function Payments() {
         <Container>
             <Swiper
             breakpoints={{
-                360: {
+                320: {
                     slidesPerView: 1,
                     spaceBetween: 40,
                 },
