@@ -11,8 +11,17 @@ import "swiper/css/pagination";
 import useSWR, { Fetcher } from "swr";
 import { Slide } from "@/types";
 import { Button } from "@/components/ui/button";
+import { m } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Categories() {
+
+  const animation ={
+    hide:{scale:0, opacity:0},
+    show:{scale:1, opacity:1},
+  }
+
+
   // client side data fethcing
   const fetcher: Fetcher<Slide[], string> = (...args) =>
     fetch(...args)
@@ -23,6 +32,10 @@ export default function Categories() {
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
     fetcher
   );
+  const router = useRouter();
+  const handleClick =(link: string) =>{
+    router.push(link);
+  };
   return (
     <section className="py-10 w-full">
       <Container>
@@ -45,7 +58,7 @@ export default function Categories() {
               spaceBetween: 40,
             },
             1280: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 40,
             },
           }}
@@ -56,7 +69,7 @@ export default function Categories() {
           modules={[Navigation, Pagination, Autoplay]}
           className="shadow-xl w-full flex items-center justify-center border border-gray-200 rounded-md px-20 py-10"
         >
-          { data && data.filter((item: Slide) => item.slug === "top-categories-home").map((item: Slide) => (
+          { data && data.filter((item: Slide) => item.slug === "top-categories-home").map((item: Slide,idx:number) => (
             <SwiperSlide key={item._id}
             className="relative [&>button]:block hover:scale-105 duration-300 ease-linear cursor-pointer"
             style={{
@@ -70,8 +83,14 @@ export default function Categories() {
             >
               {
                 item.title !==""?(
-                  <div>
-                    <h6>{item.title}</h6>
+                  <div className="absolute bg-white p-4 rounded-xl bottom-10 shadow-xl cursor-pointer hover:text-white hover:bg-black duration-300 ease-linear capitalize drop-shadow-xl"
+                  onClick={() => handleClick(item.link)}
+                  >
+                    <m.h6
+                    initial={animation.hide}
+                    whileInView={animation.show}
+                    transition={{delay:0.1+ idx/6}}
+                    >{item.title}</m.h6>
                   </div>
                 ):(
                   <div>
