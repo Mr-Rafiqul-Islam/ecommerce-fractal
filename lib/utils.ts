@@ -44,7 +44,7 @@ export const getRatingNote = (reviews: Review[]): number => {
 export const getBestPriceWithDiscountFromProduct = (
   product: Product
 ): number => {
-  const data = product.subProducts.map((subProduct: SubProduct) => {
+  const data = product?.subProducts?.map((subProduct: SubProduct) => {
     return subProduct.options.map((options: Options) => {
       return options.discount
         ? discountPrice(options.price, options.discount)

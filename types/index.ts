@@ -35,7 +35,7 @@ export type Product = {
   _id: string;
   name: string;
   slug: string;
-  feature: boolean;
+  featured: boolean;
   description: string;
   category: Category;
   subCategories: SubCategory[];
