@@ -7,10 +7,6 @@ import { Navigation, Pagination,Autoplay } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import useSWR, { Fetcher } from 'swr';
-import { Slide } from '@/types';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import './style.css'
 import { Calendar, CreditCard, Headset, LockKeyhole, Truck } from 'lucide-react';
 
@@ -51,7 +47,7 @@ export default function Payments() {
                 <SwiperSlide className='relative py-10'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Headset className='h-6 w-6 text-primary-900' />
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col">
                             <h6 className='uppercase text-base'>24/7</h6>
                             <span className='text-sm'> Support every time</span>
                         </div>
@@ -60,7 +56,7 @@ export default function Payments() {
                 <SwiperSlide className='relative py-10'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <CreditCard className='h-6 w-6 text-primary-900' />
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col">
                             <h6 className='uppercase text-base'>accept payment</h6>
                             <span className='text-sm'> visa, paypal, mastercard</span>
                         </div>
@@ -69,7 +65,7 @@ export default function Payments() {
                 <SwiperSlide className='relative py-10'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <LockKeyhole className='h-6 w-6 text-primary-900' />
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col">
                             <h6 className='uppercase text-base'>secured payment</h6>
                             <span className='text-sm'> 100% secured</span>
                         </div>
@@ -78,7 +74,7 @@ export default function Payments() {
                 <SwiperSlide className='relative py-10'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Truck className='h-6 w-6 text-primary-900' />
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col">
                             <h6 className='uppercase text-base'>free shipping</h6>
                             <span className='text-sm'> order over $300</span>
                         </div>
@@ -87,7 +83,7 @@ export default function Payments() {
                 <SwiperSlide className='relative py-10'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Calendar className='h-6 w-6 text-primary-900' />
-                        <div className="flex flex-col gap-4">
+                        <div className="flex flex-col">
                             <h6 className='uppercase text-base'>30 days return</h6>
                             <span className='text-sm'> 30 days guarantee</span>
                         </div>
