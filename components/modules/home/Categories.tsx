@@ -13,6 +13,8 @@ import { Slide } from "@/types";
 import { Button } from "@/components/ui/button";
 import { m } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Row from "@/components/custom/Row";
+import Heading from "@/components/custom/Heading";
 
 export default function Categories() {
 
@@ -39,6 +41,9 @@ export default function Categories() {
   return (
     <section className="py-10 w-full">
       <Container>
+        <Row className="mb-10">
+          <Heading name="Shop By Top Categories"/>
+        </Row>
         <Swiper
           breakpoints={{
             320: {
@@ -67,7 +72,7 @@ export default function Categories() {
           navigation={false}
           pagination={true}
           modules={[Navigation, Pagination, Autoplay]}
-          className="shadow-xl w-full flex items-center justify-center border border-gray-200 rounded-md px-20 py-10"
+          className=""
         >
           { data && data.filter((item: Slide) => item.slug === "top-categories-home").map((item: Slide,idx:number) => (
             <SwiperSlide key={item._id}
