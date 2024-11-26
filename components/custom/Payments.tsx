@@ -12,7 +12,7 @@ import { Calendar, CreditCard, Headset, LockKeyhole, Truck } from 'lucide-react'
 
 export default function Payments() {
   return (
-    <section className='py-10 w-full'>
+    <section className='py-4 w-full'>
         <Container>
             <Swiper
             breakpoints={{
@@ -44,7 +44,7 @@ export default function Payments() {
                 modules={[Navigation, Pagination,Autoplay]}
                 className='shadow-xl w-full flex items-center justify-center border border-gray-200 rounded-md px-20 py-10'
             >
-                <SwiperSlide className='relative py-10'>
+                <SwiperSlide className='relative py-4'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Headset className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col">
@@ -53,7 +53,7 @@ export default function Payments() {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='relative py-10'>
+                <SwiperSlide className='relative py-4'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <CreditCard className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col">
@@ -62,7 +62,7 @@ export default function Payments() {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='relative py-10'>
+                <SwiperSlide className='relative py-4'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <LockKeyhole className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col">
@@ -71,7 +71,7 @@ export default function Payments() {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='relative py-10'>
+                <SwiperSlide className='relative py-4'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Truck className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col">
@@ -80,7 +80,7 @@ export default function Payments() {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='relative py-10'>
+                <SwiperSlide className='relative py-4'>
                     <div className='flex items-center gap-4 lg:after:h-10 lg:after:w-[2px] after:translate-x-14 after:bg-neutral-200'>
                         <Calendar className='h-6 w-6 text-primary-900' />
                         <div className="flex flex-col">

@@ -88,7 +88,7 @@ export default function Categories() {
             >
               {
                 item.title !==""?(
-                  <div className="absolute bg-white p-4 rounded-xl bottom-10 shadow-xl cursor-pointer hover:text-white hover:bg-black duration-300 ease-linear capitalize drop-shadow-xl"
+                  <div className="absolute bg-white p-4 rounded-md bottom-10 shadow-xl cursor-pointer hover:text-white hover:bg-black duration-300 ease-linear capitalize drop-shadow-xl"
                   onClick={() => handleClick(item.link)}
                   >
                     <m.h6

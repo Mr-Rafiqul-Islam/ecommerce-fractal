@@ -4,6 +4,7 @@ import React from "react";
 import "./globals.css";
 import { kanit } from "./fonts/fonts";
 import Providers from "@/providers";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${kanit.className} `}>
+        <body className={cn("overflow-x-hidden min-h-screen",kanit.className)}>
           <Providers>{children}</Providers>
         </body>
       </html>

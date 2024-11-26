@@ -52,7 +52,7 @@ export default function ProductCard({ item }: { item: Product }) {
             onClick={() => router.push(`/products/${item.slug}`)}
             variant="outline"
             size="icon"
-            className="hover:bg-black hover:text-white duration-300"
+            className="hover:bg-black hover:text-white duration-300 rounded-md"
           >
             <Eye />
           </Button>
