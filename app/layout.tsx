@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={cn("overflow-x-hidden min-h-screen",kanit.className)}>
+        <body className={cn(" !overflow-x-hidden min-h-screen", kanit.className)}>
           <Providers>{children}</Providers>
         </body>
       </html>

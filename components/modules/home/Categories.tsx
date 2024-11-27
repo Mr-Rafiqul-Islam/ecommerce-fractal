@@ -68,7 +68,7 @@ export default function Categories() {
             },
           }}
           spaceBetween={50}
-          slidesPerView={5}
+          slidesPerView={4}
           navigation={false}
           pagination={true}
           modules={[Navigation, Pagination, Autoplay]}

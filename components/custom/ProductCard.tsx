@@ -11,6 +11,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Eye } from "lucide-react";
 import CurrencyFormat from "./CurrencyFormat";
+import { m } from "framer-motion";
 
 export default function ProductCard({ item }: { item: Product }) {
   const router = useRouter();
@@ -47,7 +48,13 @@ export default function ProductCard({ item }: { item: Product }) {
           height="450"
           className="absolute  duration-300 top-0 -translate-x-full ease-linear group-hover/image:translate-x-0"
         />
-        <div className="absolute top-4 right-4 hidden flex-col gap-4 group-hover/image:flex duration-300 ease-in">
+        <m.div
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 10 }}
+          transition={{ duration: 0.3, type: "spring" }}
+          className="absolute top-4 right-4 hidden flex-col gap-4 group-hover/image:flex duration-300 ease-in"
+        >
           <Button
             onClick={() => router.push(`/products/${item.slug}`)}
             variant="outline"
@@ -56,7 +63,7 @@ export default function ProductCard({ item }: { item: Product }) {
           >
             <Eye />
           </Button>
-        </div>
+        </m.div>
       </div>
       {/* content */}
       <div className="flex flex-col gap-4 items-start py-4">
