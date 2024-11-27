@@ -4,7 +4,6 @@ import React from "react";
 import useSWR, { Fetcher } from "swr";
 import { Slide } from "@/types";
 import { m } from "framer-motion";
-import { useRouter } from "next/navigation";
 export default function CtaTwo() {
   // client side data fethcing
   const fetcher: Fetcher<Slide[], string> = (...args) =>
@@ -12,11 +11,11 @@ export default function CtaTwo() {
       .then((res) => res.json())
       .then((data) => data.data);
 
-  const { data, error, isLoading } = useSWR<Slide[]>(
+  const { data } = useSWR<Slide[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
     fetcher
   );
-  const router = useRouter();
+  
 
   return (
     <m.section

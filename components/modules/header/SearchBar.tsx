@@ -4,10 +4,6 @@ import React, { useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";

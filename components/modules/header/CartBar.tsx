@@ -2,7 +2,6 @@ import React from "react";
 import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Trash } from "lucide-react";
-import { CartItem } from "@/types";
 import CurrencyFormat from "@/components/custom/CurrencyFormat";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

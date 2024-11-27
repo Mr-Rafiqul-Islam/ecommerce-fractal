@@ -32,7 +32,7 @@ export default function HomeSlide() {
       .then((res) => res.json())
       .then((data) => data.data);
 
-  const { data, error, isLoading } = useSWR<Slide[]>(
+  const { data, error } = useSWR<Slide[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
     fetcher
   );

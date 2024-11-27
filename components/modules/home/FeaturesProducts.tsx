@@ -10,9 +10,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import useSWR, { Fetcher } from "swr";
 import { Product } from "@/types";
-import { Button } from "@/components/ui/button";
-import { m } from "framer-motion";
-import { useRouter } from "next/navigation";
 import ProductCard from "@/components/custom/ProductCard";
 import Loading from "@/components/custom/Loading";
 import Row from "@/components/custom/Row";
@@ -33,10 +30,7 @@ export default function FeaturesProducts() {
   );
   if(error) return <div>Failed to load due to Products data Fetching error!</div>;
 
-  const router = useRouter();
-  const handleClick =(link: string) =>{
-    router.push(link);
-  };
+  
   return (
     <section className="py-10 w-full">
       {isLoading && <Loading isLoading={true} />}

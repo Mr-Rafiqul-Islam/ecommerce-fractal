@@ -17,7 +17,7 @@ export default function MainMenu() {
       .then((res) => res.json())
       .then((data) => data.data);
 
-  const { data, error, isLoading } = useSWR<Category[]>(
+  const { data, error, } = useSWR<Category[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/categories",
     fetcher
   );

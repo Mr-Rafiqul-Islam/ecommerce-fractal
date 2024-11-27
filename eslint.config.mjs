@@ -24,6 +24,8 @@ export default [
       "types/*",
       "coverage/*",
       "components/ui/*",
+      "cypress/*",
+      "cypress.config.ts",
     ],
     // plugins: ["react", "react-hooks"],
   },
