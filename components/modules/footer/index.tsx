@@ -17,7 +17,7 @@ export default function Footer() {
   const { isSignedIn } = useUser();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const handleSave = async (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleSave = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (loading) {
       setLoading(false);
