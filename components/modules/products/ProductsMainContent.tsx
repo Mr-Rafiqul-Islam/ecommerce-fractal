@@ -2,7 +2,9 @@
 import usePagination from "@/hooks/usePagination";
 import { cn } from "@/lib/utils";
 import { Product } from "@/types";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Loading from "@/components/custom/Loading";
 
 export default function ProductsMainContent({
   minPrice,
@@ -29,7 +31,37 @@ export default function ProductsMainContent({
   const count = Math.ceil(products.length / perpages);
   const _DATA = usePagination(products, perpages);
 
-  
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>, p: number ) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
 
-  return <div className={cn("border", className)}>ProductsMainContent</div>;
+  // get products
+
+  useEffect(() => {
+    const getProducts = async () => {
+      setLoading(true);
+      await axios 
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/products", {
+          params: { minPrice, maxPrice, filter},
+        })
+        .then((res) => {
+          const data = res.data;
+          setProducts(data.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        })
+    };
+    getProducts();
+  }, [page, minPrice, maxPrice, filter]);
+
+  return (
+    <>
+    {loading && <Loading isLoading={loading} />}
+    <div className={cn("border", className)}>ProductsMainContent</div>
+    </>
+  );
 }
