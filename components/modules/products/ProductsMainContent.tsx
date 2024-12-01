@@ -5,6 +5,9 @@ import { Product } from "@/types";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "@/components/custom/Loading";
+import { Pagination } from "@mui/material";
+import ProductTopBar from "@/components/custom/ProductTopBar";
+import ProductsContent from "@/components/custom/ProductsContent";
 
 export default function ProductsMainContent({
   minPrice,
@@ -25,13 +28,13 @@ export default function ProductsMainContent({
 }) {
   const [products, setProducts] = useState<Product[]>([]);
   const [perpages, setPerpages] = useState<number>(10);
-  const [filter, setFilter] = useState<string>('latest');
+  const [filter, setFilter] = useState<string>("latest");
   const [page, setPage] = useState<number>(1);
 
   const count = Math.ceil(products.length / perpages);
   const _DATA = usePagination(products, perpages);
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>, p: number ) => {
+  const handleChange = (e: React.ChangeEvent<unknown>, p: number) => {
     setPage(p);
     _DATA.jump(p);
   };
@@ -41,9 +44,9 @@ export default function ProductsMainContent({
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      await axios 
+      await axios
         .get(process.env.NEXT_PUBLIC_API_URL + "/api/products", {
-          params: { minPrice, maxPrice, filter},
+          params: { minPrice, maxPrice, filter },
         })
         .then((res) => {
           const data = res.data;
@@ -53,15 +56,29 @@ export default function ProductsMainContent({
         .catch((err) => {
           console.log(err);
           setLoading(false);
-        })
+        });
     };
     getProducts();
   }, [page, minPrice, maxPrice, filter]);
 
   return (
     <>
-    {loading && <Loading isLoading={loading} />}
-    <div className={cn("border", className)}>ProductsMainContent</div>
+      {loading && <Loading isLoading={loading} />}
+      <div className={cn("border", className)}>
+        <div className="flex flex-col gap-4">
+          <ProductTopBar  minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading} perpages={perpages} setPerpages={setPerpages} products={products}
+          filter={filter} setFilter={setFilter}
+          page={page}
+          maxPage={_DATA.maxPage}
+          />
+          <ProductsContent />
+          <div className="flex justify-between mt-auto py-10">
+            <Pagination count={count} page={page} color="primary" variant="outlined" shape="rounded" 
+            onChange={handleChange}
+            />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
