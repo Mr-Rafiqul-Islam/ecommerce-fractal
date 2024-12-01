@@ -59,7 +59,7 @@ export default function ProductsMainContent({
         });
     };
     getProducts();
-  }, [page, minPrice, maxPrice, filter]);
+  }, [page, minPrice, maxPrice, filter, perpages]);
 
   return (
     <>

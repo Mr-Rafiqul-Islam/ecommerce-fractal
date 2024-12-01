@@ -51,8 +51,8 @@ export default function ProductTopBar({
         <div className="ms-auto">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm">
-                Filter
+              <Button variant="outline" className="capitalize" size="sm">
+                {filter}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
@@ -81,6 +81,36 @@ export default function ProductTopBar({
                   onClick={() => setFilter("latest")}
                 >
                   Latest
+                </DropdownMenuRadioItem>
+              </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          {/* showing products on perpage */}
+          <span className="ms-4 text-base">Show:</span>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">{perpages}</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuSeparator />
+              <DropdownMenuRadioGroup value={"bottom"}>
+                <DropdownMenuRadioItem
+                  value="30"
+                  onClick={() => setPerpages(30)}
+                >
+                  30
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem
+                  value="20"
+                  onClick={() => setPerpages(20)}
+                >
+                  20
+                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem
+                  value="10"
+                  onClick={() => setPerpages(10)}
+                >
+                  10
                 </DropdownMenuRadioItem>
               </DropdownMenuRadioGroup>
             </DropdownMenuContent>
