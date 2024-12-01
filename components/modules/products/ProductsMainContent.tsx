@@ -71,7 +71,7 @@ export default function ProductsMainContent({
           page={page}
           maxPage={_DATA.maxPage}
           />
-          <ProductsContent />
+          <ProductsContent products={_DATA.currentData()} />
           <div className="flex justify-between mt-auto py-10">
             <Pagination count={count} page={page} color="primary" variant="outlined" shape="rounded" 
             onChange={handleChange}

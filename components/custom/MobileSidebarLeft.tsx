@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function MobileSidebarLeft() {
   return (
-    <div>MobileSidebarLeft</div>
+    <div className='hidden lg:block'>MobileSidebarLeft</div>
   )
 }

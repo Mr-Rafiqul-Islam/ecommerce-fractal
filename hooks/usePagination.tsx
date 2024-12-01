@@ -9,6 +9,7 @@ export default function usePagination(data: Array<any>, itemsPerPage: number) {
   function currentData() {
     const begin = (currentPage - 1) * itemsPerPage;
     const end = begin + itemsPerPage;
+    return data.slice(begin, end);
   }
 
   function next() {
