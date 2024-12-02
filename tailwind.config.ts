@@ -10,9 +10,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // color palette for app
       colors: {
-        // primary and secondary colors
         primary: {
           "50": "#fcf3f6",
           "100": "#fbe8f0",
@@ -37,14 +35,8 @@ const config: Config = {
           "800": "#065186",
           "900": "#0c446e",
         },
-
-        // base colors
         dark: "#1f1f1f",
         white: "#ffffff",
-
-        // Deafult Colors ["neutral", "gray" , "slate"]
-
-        // Base Color themes
         heading: "#1f1f1f",
         desc: "#4b5563",
         label: "#1f1f1f",
@@ -52,15 +44,10 @@ const config: Config = {
         borders: "#E5E7EB",
         inputBorders: "#d1d5db",
         iconsInside: "#6b7280",
-
-        // for background
-        tableHeader: colors.gray[900], // "#111827",
-        backgroundDisabled: colors.gray[100], //"#F3F4F6",
+        tableHeader: "colors.gray[900]",
+        backgroundDisabled: "colors.gray[100]",
       },
-
-      //   Typography
-
-      fontFamily: {}, //using next font
+      fontFamily: {},
       fontSize: {
         sm: "0.8rem",
         base: "1rem",
@@ -69,8 +56,6 @@ const config: Config = {
         "3xl": "1.953rem",
         "4xl": "2.441rem",
         "5xl": "3.052rem",
-
-        // custom font size
         h1: [
           "4rem",
           {
@@ -81,11 +66,7 @@ const config: Config = {
         ],
         h2: [
           "3rem",
-          {
-            lineHeight: "2rem",
-            fontWeight: "bold",
-            letterSpacing: "0.035rem",
-          },
+          { lineHeight: "2rem", fontWeight: "bold", letterSpacing: "0.035rem" },
         ],
         h3: [
           "2.5rem",
@@ -97,52 +78,27 @@ const config: Config = {
         ],
         h4: [
           "2rem",
-          {
-            lineHeight: "2.75rem",
-            fontWeight: "bold",
-            letterSpacing: "0rem",
-          },
+          { lineHeight: "2.75rem", fontWeight: "bold", letterSpacing: "0rem" },
         ],
         h5: [
           "1.5rem",
-          {
-            lineHeight: "2.5rem",
-            fontWeight: "600",
-            letterSpacing: "0rem",
-          },
+          { lineHeight: "2.5rem", fontWeight: "600", letterSpacing: "0rem" },
         ],
         h6: [
           "1.25rem",
-          {
-            lineHeight: "2rem",
-            fontWeight: "600",
-            letterSpacing: "0.0375rem",
-          },
+          { lineHeight: "2rem", fontWeight: "600", letterSpacing: "0.0375rem" },
         ],
-
         p: [
           "1.25rem",
-          {
-            lineHeight: "2rem",
-            fontWeight: "500",
-            letterSpacing: "0rem",
-          },
+          { lineHeight: "2rem", fontWeight: "500", letterSpacing: "0rem" },
         ],
         div: [
           "1rem",
-          {
-            lineHeight: "1.5rem",
-            fontWeight: "400",
-            letterSpacing: "0rem",
-          },
+          { lineHeight: "1.5rem", fontWeight: "400", letterSpacing: "0rem" },
         ],
         span: [
           "0.75rem",
-          {
-            lineHeight: "1.5rem",
-            fontWeight: "400",
-            letterSpacing: "0rem",
-          },
+          { lineHeight: "1.5rem", fontWeight: "400", letterSpacing: "0rem" },
         ],
       },
       fontWeight: {
@@ -158,78 +114,64 @@ const config: Config = {
         "extra-bold": "800",
         black: "900",
       },
-      // screen breakpoints for min width
       screens: {
         xs: "320px",
-        // => @media (min-width: 320px) { ... }
-
         sm: "640px",
-        // => @media (min-width: 640px) { ... }
-
         md: "768px",
-        // => @media (min-width: 768px) { ... }
-
         lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
         xl: "1280px",
-        // => @media (min-width: 1280px) { ... }
-
         "2xl": "1480px",
-        // => @media (min-width: 1480px) { ... }
-
         "3xl": "1680px",
-        // => @media (min-width: 1680px) { ... }
-
         "4xl": "1920px",
-        // => @media (min-width: 1920px) { ... }
       },
-      // container
       container: {
         center: true,
-        // screens  max width
         screens: {
           xs: "320px",
-          // => @media (max-width: 320px) { ... }
-
           sm: "575px",
-          // => @media (max-width: 640px) { ... }
-
           md: "768px",
-          // => @media (max-width: 768px) { ... }
-
           lg: "1024px",
-          // => @media (max-width: 1024px) { ... }
-
           xl: "1280px",
-          // => @media (max-width: 1280px) { ... }
-
           "2xl": "1480px",
-          // => @media (max-width: 1480px) { ... }
-
           "3xl": "1680px",
-          // => @media (max-width: 1680px) { ... }
-
           "4xl": "1920px",
-          // => @media (max-width: 1920px) { ... }
         },
-
         padding: {
-          DEFAULT: '0rem',
-          sm: '0rem',
-          lg: '0rem',
-          xl: '0rem',
-          '2xl': '0rem',
-          '3xl': '2rem',
-          '4xl': '2rem',
+          DEFAULT: "0rem",
+          sm: "0rem",
+          lg: "0rem",
+          xl: "0rem",
+          "2xl": "0rem",
+          "3xl": "2rem",
+          "4xl": "2rem",
         },
-
       },
-      // border radius
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

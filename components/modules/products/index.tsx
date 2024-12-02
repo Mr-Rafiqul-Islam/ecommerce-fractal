@@ -12,7 +12,7 @@ const [loading, setLoading] = useState(false);
   return (
     <section>
         <Container>
-            <Row className='gap-12'>
+            <Row className='gap-12 items-start'>
                 {/* filtering sidebar */}
                 <ProductsSidebarLeft minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading} className="hidden lg:block"/>
                 {/* main content */}
