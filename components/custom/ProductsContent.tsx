@@ -2,7 +2,7 @@ import React from "react";
 import { Product } from "@/types";
 import { ShoppingBasket } from "lucide-react";
 import ProductCardTwo from "./ProductCardTwo";
-import ProductCard from "./ProductCard";
+
 export default function ProductsContent({ products }: { products?: Product[] }) {
   return (
     <>
