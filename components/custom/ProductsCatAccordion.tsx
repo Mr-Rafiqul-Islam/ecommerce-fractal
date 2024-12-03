@@ -37,17 +37,17 @@ export default function ProductsCatAccordion() {
   return (
     <>
       {loading ? (
-        <div>
-          <Skeleton className="w-full" height={600} />
-        </div>
+        
+          <Skeleton width={200} height={600} />
+        
       ) : (
         <Accordion type="single" collapsible className="w-full">
           {categories &&
             categories.slice(0, 20).map((item: Category) => (
               <AccordionItem value={item._id} key={item._id}>
                 <AccordionTrigger className="!py-0">
-                  <Link href={`/categories/${item.link}/products`}>
-                    <span className="text-xl">{item.name}</span>
+                  <Link className="text-xl" href={`/categories/${item.link}/products`}>
+                    <span className="text-xl capitalize">{item.name}</span>
                   </Link>
                 </AccordionTrigger>
                 <AccordionContent>

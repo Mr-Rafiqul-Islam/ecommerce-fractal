@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown } from "lucide-react"
+import { Minus,Plus } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 
 
@@ -30,14 +30,15 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        "flex gap-4 flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>.plus]:hidden [&[data-state=closed]>.minus]:hidden [&[data-state=open]>button]:text-neutral-50 [&[data-state=open]>button]:bg-black [&[data-state=closed]>button]:text-neutral-900 [&[data-state=closed]>button]:bg-white",
         className
       )}
       {...props}
     >
       <Checkbox className="shrink-0 rounded-sm border border-slate-200 ring-0ffset-white focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"/>
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <Plus className="ms-auto h-6 w-6 plus shrink-0 transition-all duration-200" />
+      <Minus className="ms-auto h-6 w-6 minus shrink-0 transition-all duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

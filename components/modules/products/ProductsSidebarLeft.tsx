@@ -20,7 +20,7 @@ export default function ProductsSidebarLeft({
   setLoading: (v: boolean) => void;
   className?: string;
 }) {
-  return <div className={cn("lg:max-w-[300px] h-full",className)}>
+  return <div className={cn("lg:max-w-[360px] h-full",className)}>
     <div className="flex flex-col gap-8 items-center">
       <div className="flex flex-col gap-2 items-center w-full">
         <HeadingSidebar name="Product Categories" />
