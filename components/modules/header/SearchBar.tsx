@@ -44,8 +44,8 @@ export default function SearchBar({
   };
   return (
     <>
-    {(isValidating||isLoading) && <Loading isLoading={isValidating} />}
     <Dialog open={openSearchBar}>
+    {(isValidating||isLoading) && <Loading isLoading={isValidating} />}
       <DialogContent className="lg:max-w-screen-xl z-[9999] [&>.closeBtn]:hidden ">
         <div className="flex items-center w-full gap-4">
           <Search className="text-slate-300" />

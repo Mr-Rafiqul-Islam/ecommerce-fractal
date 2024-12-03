@@ -64,7 +64,7 @@ export default function ProductsMainContent({
   return (
     <>
       {loading && <Loading isLoading={loading} />}
-      <div className={cn("border", className)}>
+      <div className={cn("", className)}>
         <div className="flex flex-col gap-4">
           <ProductTopBar  minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading} perpages={perpages} setPerpages={setPerpages} products={products}
           filter={filter} setFilter={setFilter}

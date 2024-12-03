@@ -48,7 +48,6 @@ export default function SidebarMenu() {
 
   return (
     <>
-      {isLoading && <div>Loading...</div>}
       <Sheet>
         <SheetTrigger>
           <CiMenuFries size={34} />
