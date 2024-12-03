@@ -12,7 +12,7 @@ export default function ProductsContent({ products }: { products?: Product[] }) 
           <h3 className="">No Product Found</h3>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 relative">
             {   products &&
                 products?.map((item : Product )=>(
                     <ProductCardTwo key={item._id} item={item} />

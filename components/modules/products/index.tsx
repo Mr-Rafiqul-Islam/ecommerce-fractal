@@ -16,7 +16,7 @@ const [loading, setLoading] = useState(false);
                 {/* filtering sidebar */}
                 <ProductsSidebarLeft minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading} className="hidden lg:block"/>
                 {/* main content */}
-                <ProductsMainContent minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading} className="flex-1"  />
+                <ProductsMainContent minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading} className="flex-1 lg:flex flex-col gap-4 justify-start h-full"  />
             </Row>
         </Container>
     </section>

@@ -46,7 +46,7 @@ export default function ProductCardTwo({ item }: { item: Product }) {
           alt={item.name}
           width="300"
           height="450"
-          className="absolute  duration-300 top-0 -translate-x-full ease-linear group-hover/image:translate-x-0"
+          className="absolute duration-300 top-0 -translate-x-full ease group-hover/image:translate-x-0"
         />
         <m.div
           initial={{ opacity: 0, x: 10 }}
