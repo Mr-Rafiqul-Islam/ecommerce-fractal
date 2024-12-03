@@ -18,7 +18,6 @@ export default function MobileSidebarLeft({
   setMaxPrice,
   loading,
   setLoading,
-  className,
 }: {
   minPrice: number;
   setMinPrice: (v: number) => void;
@@ -26,7 +25,6 @@ export default function MobileSidebarLeft({
   setMaxPrice: (v: number) => void;
   loading: boolean;
   setLoading: (v: boolean) => void;
-  className?: string;
 }) {
   return (
     <div className="block lg:hidden">

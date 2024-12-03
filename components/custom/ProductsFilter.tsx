@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@/lib/utils';
 import React,{useState} from 'react'
 
 
@@ -8,7 +9,6 @@ export default function ProductsFilter({
     maxPrice,
     setMaxPrice,
     loading,
-    setLoading,
     className,
   }: {
     minPrice: number;
@@ -21,9 +21,9 @@ export default function ProductsFilter({
   }) {
 
     const [minPricePreview, setMinPricePreview] = useState(minPrice);
-    const [maxPricePreview, setMaxPricePreview] = useState(minPrice);
+    const [maxPricePreview, setMaxPricePreview] = useState(maxPrice);
   return (
-    <div className='flex flex-col gap-4 w-full'>
+    <div className={cn('flex flex-col gap-4 w-full',className)}>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-1 my-4">
             <div className="grid grid-cols-2 gap-3">
                 <div>
