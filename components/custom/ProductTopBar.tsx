@@ -43,7 +43,7 @@ export default function ProductTopBar({
   return (
     <div className="lg:flex items-center justify-between w-full ">
       <div className="flex items-center justify-between gap-4 flex-1 w-full">
-        <MobileSidebarLeft />
+        <MobileSidebarLeft minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading}/>
         <div className="hidden lg:block">
           Showing {maxPage === page ? products.length : perpages * page} of{" "}
           {products.length} results
