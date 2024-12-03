@@ -1,5 +1,6 @@
 import HeadingSidebar from "@/components/custom/HeadingSidebar";
 import ProductsCatAccordion from "@/components/custom/ProductsCatAccordion";
+import ProductsFilter from "@/components/custom/ProductsFilter";
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -25,6 +26,11 @@ export default function ProductsSidebarLeft({
       <div className="flex flex-col gap-2 items-center w-full">
         <HeadingSidebar name="Product Categories" />
         <ProductsCatAccordion />
+      </div>
+
+      <div className="flex flex-col gap-2 items-center w-full">
+        <HeadingSidebar name="Filter By Price" />
+        <ProductsFilter minPrice={minPrice} setMinPrice={setMinPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} loading={loading} setLoading={setLoading}/>
       </div>
     </div>
   </div>;
