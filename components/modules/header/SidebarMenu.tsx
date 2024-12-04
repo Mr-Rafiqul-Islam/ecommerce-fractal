@@ -32,19 +32,31 @@ export default function SidebarMenu() {
       .then((res) => res.json())
       .then((data) => data.data);
 
-  const { data, error, isLoading } = useSWR<Category[]>(
+  const { data: categories, error: categoryError, isLoading: categoryLoading } = useSWR<Category[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/categories",
     fetcher
   );
-  if (error)
-    return <div>Failed to load due to Categories data Fetching error!</div>;
-
-  const pageApi = useSWR<Page[]>(
+  // Fetch pages
+  const { data: pages, error: pageError, isLoading: pageLoading } = useSWR<Page[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/pages",
     fetcher
   );
-  if (pageApi.error)
-    return <div>Failed to load due to Pages data Fetching error!</div>;
+
+  // Error handling
+  if (categoryError || pageError) {
+    return (
+      <div>
+        {categoryError && <p>Failed to load categories due to an error!</p>}
+        {pageError && <p>Failed to load pages due to an error!</p>}
+      </div>
+    );
+  }
+
+  // Loading state
+  if (categoryLoading || pageLoading) {
+    return <div>Loading...</div>;
+  }
+
 
   return (
     <>
@@ -63,8 +75,8 @@ export default function SidebarMenu() {
               </TabsList>
               <TabsContent value="category">
                 <div className="flex flex-col gap-8 h-full">
-                  {data &&
-                    data.slice(0, 20).map((item: Category) => (
+                  {categories &&
+                    categories.slice(0, 20).map((item: Category) => (
                       <div key={item._id} className="group px-4 py-2">
                         <div className="flex items-center gap-4">
                           <span
@@ -90,8 +102,8 @@ export default function SidebarMenu() {
                 </div>
               </TabsContent>
               <TabsContent value="pages">
-                {pageApi.data &&
-                  pageApi.data.map((item: Page) => (
+                {pages &&
+                  pages.map((item: Page) => (
                     <div
                       key={item._id}
                       className="group inline-flex px-4 py-2 gap-4 w-full hover:text-primary-700 capitalize cursor-pointer"
