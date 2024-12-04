@@ -28,7 +28,7 @@ export default function ProductCardTwo({ item }: { item: Product }) {
   );
 
   return (
-    <div className="flex flex-col gap-4 items-center cursor-pointer ">
+    <div className="flex flex-col gap-4 items-center cursor-pointer w-full">
       {/* images */}
       <div
         onClick={() => router.push(`/products/${item.slug}`)}
@@ -37,16 +37,16 @@ export default function ProductCardTwo({ item }: { item: Product }) {
         <Image
           src={images[0]}
           alt={item.name}
-          width="300"
+          width={300}
           height="400"
-          className="duration-300 ease-linear group-hover/image:translate-x-full object-cover"
+          className="duration-300 ease-linear group-hover/image:translate-x-full w-full object-cover"
         />
         <Image
           src={images[1]}
           alt={item.name}
           width="300"
           height="450"
-          className="absolute duration-300 top-0 -translate-x-full ease group-hover/image:translate-x-0"
+          className="absolute duration-300 top-0 -translate-x-full w-full ease group-hover/image:translate-x-0"
         />
         <m.div
           initial={{ opacity: 0, x: 10 }}

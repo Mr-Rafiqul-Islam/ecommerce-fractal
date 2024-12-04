@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 "use client";
 import  { useState } from "react";
 
-export default function usePagination(data: Array<unknown>, itemsPerPage: number) {
+export default function usePagination(data: Array<any>, itemsPerPage: number) {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const maxPage = Math.ceil(data.length / itemsPerPage);
 
