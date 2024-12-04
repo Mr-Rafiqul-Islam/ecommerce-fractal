@@ -44,22 +44,20 @@ export default function ProductsMainContent({
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/products", {
+      try {
+        const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/api/products", {
           params: { minPrice, maxPrice, filter },
-        })
-        .then((res) => {
-          const data = res.data;
-          setProducts(data.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setLoading(false);
         });
+        const data = res.data;
+        setProducts(data.data);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
     };
     getProducts();
-  }, [page, minPrice, maxPrice, filter, perpages]);
+  }, [page, minPrice, maxPrice, filter, perpages, setLoading]);
 
   return (
     <>
