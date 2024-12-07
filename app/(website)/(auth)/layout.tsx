@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MoveLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-export default function layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   return (
     <div className="h-screen">
