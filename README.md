@@ -46,29 +46,22 @@ Follow these steps to set up the project locally:
 
 
 
-npm install
-# or
-yarn install
+   npm install
+   or
+   yarn install
 
 3. Run the development server:
 
 
-npm run dev
-# or
-yarn dev
+   npm run dev
+    or
+   yarn dev
 
 4. Open your browser and navigate to: http://localhost:3000
 
 🧪 Testing
 Run tests using Cypress:
 ```bash
-npm run test
+   npm run test
 
-
-
-🤝 Contributions
-Contributions are welcome! Feel free to submit a pull request or open an issue for any feature requests or bug fixes.
-
-📄 License
-This project is licensed under the MIT License.
 
